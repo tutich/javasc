@@ -9,7 +9,10 @@
 // var z= x-y;
 // console.log(z)
 
-function sample (a1, a2) {
-    return a1 * a2;
-}
-console.log(sample);
+// function sample (a1, a2) {
+//     return a1 * a2;
+// }
+// console.log(sample);
+
+var cars = [ "toyota", "BMW", "Audi"];
+console.log(cars)
