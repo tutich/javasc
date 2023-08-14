@@ -12,5 +12,19 @@
 </head>
 <body>
    <button onclick="this.innerHTML = Date()">The time is?</button> 
+   <p id="if">Greetings</p>
+   <script>
+    const hour = new Date().getHours(); 
+let greeting;
+if (hour < 18) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+
+document.getElementById("if").innerHTML = greeting;
+</script>
+
+   </script>
 </body>
-</html>
+</html> 

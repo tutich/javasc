@@ -14,5 +14,8 @@
 // }
 // console.log(sample);
 
-var cars = [ "toyota", "BMW", "Audi"];
-console.log(cars)
+// var cars = [ "toyota", "BMW", "Audi"];
+// console.log(cars)
+
+var m = new Date()
+console.log(m)
