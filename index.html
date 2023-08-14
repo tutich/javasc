@@ -16,10 +16,12 @@
    <script>
     const hour = new Date().getHours(); 
 let greeting;
-if (hour < 18) {
-  greeting = "Good day";
-} else {
+if (hour < 10) {
+  greeting = "Good morning";
+} else if (hour < 20) {
   greeting = "Good evening";
+} else {
+    greeting = "Good night";
 }
 
 document.getElementById("if").innerHTML = greeting;
