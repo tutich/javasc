@@ -38,12 +38,19 @@
 //   default:
 //     text = "Looking forward to the Weekend";
 // }
- const person = {fname: "John", lname: "kimaiwa", age: 52};
- let text = " ";
- for (let x in person) {
-    text += person[x] + " ";
- }
-document.getElementById("demo").innerHTML = text;
+//  const person = {fname: "John", lname: "kimaiwa", age: 52};
+//  let text = " ";
+//  for (let x in person) {
+//     text += person[x] + " ";
+//  }
+const person = {
+    firstName: "Peter",
+    lastName: "tutich",
+    age: "21",
+};
+const x = person;
+x.age = 21;
+document.getElementById("demo").innerHTML = person.lastName + " is " + person.age + " years old. ";
 </script>
 </body>
 </html> 
