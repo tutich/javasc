@@ -27,17 +27,22 @@
 <p id="demo"></p>
 
 <script>
-let text;
-switch (new Date().getDay()) {
-  case 6:
-    text = "Today is Saturday";
-    break;
-  case 0:
-    text = "Today is Sunday";
-    break;
-  default:
-    text = "Looking forward to the Weekend";
-}
+// let text;
+// switch (new Date().getDay()) {
+//   case 6:
+//     text = "Today is Saturday";
+//     break;
+//   case 0:
+//     text = "Today is Sunday";
+//     break;
+//   default:
+//     text = "Looking forward to the Weekend";
+// }
+ const person = {fname: "John", lname: "kimaiwa", age: 52};
+ let text = " ";
+ for (let x in person) {
+    text += person[x] + " ";
+ }
 document.getElementById("demo").innerHTML = text;
 </script>
 </body>
