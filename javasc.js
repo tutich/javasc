@@ -17,5 +17,10 @@
 // var cars = [ "toyota", "BMW", "Audi"];
 // console.log(cars)
 
-var m = new Date()
-console.log(m)
+// var m = new Date()
+// console.log(m)
+
+// var gapi = "https://chart.googleapis.com/chart?cht=qr&chs="
+// var myimg=document.getElementById("img");
+// var mytext=document.getElementById("qrtext").value;
+// var mysize=document.getElementById("size").value;
