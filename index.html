@@ -13,42 +13,76 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,300;1,8..144,200;1,8..144,300&family=Space+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-  <main>
+  <main id="container" >
     <h1>Quick Tip</h1>
   <section>
     <div class="bill">
     <label for="yourBill">Bill</label>
-    <input type="number" placeholder="your bill" id="yourBill">
+    <input type="number" placeholder="your bill" id="yourBill" >
   </div>
   <div class="space">
-    <label for="yourTip" id="tipInput">select your tip</label>
-    <span id="tipPercent">0%</span>
+    <label for="tipInput">select your tip</label>
+    <span id="tipPercent"></span>
     </div>
     <div>
     <input type="range" value="0" id="tipInput" class="range">
   </div>
   <div class="space">
-    <span id="tipValue">Tip</span>
+    <span >Tip</span>
+    <span id="tipValue"></span>
   </div>
   <hr>
-  <div style="font-size: 2rem;
-  font-weight: bolder;">Total</div>
+  <div  class="space" >
+  <span>Total</span>
+  <span id="totalWithTip"></span>
+</div>
   </section>
   <section>
     <div class="space">
       <label for="splitInput">Split</label>
-      <span id="splitValue">1 person</span>
+      <span id="splitValue"></span>
       </div>
       <div>
       <input type="range" min="1" max="10" id="splitInput" class="range">
     </div>
     <div class="space">
-      <span id="billEach">Bill Each</span>
+      <span>Bill each</span>
+      <span id="billEach"></span>
     </div>
     <div class="space">
-      <span id="tipEach">Tip Each</span>
+      <span>Tip Each</span>
+      <span id="tipEach"></span>
     </div>
+  </section>
   </main>
+  <script>
+    function formatMoney(value) {
+      value = value.toFixed(2);
+      return "$" + value
+    }
+    function formartSplit(value) {
+      if(value  === "1")  return value + "person";
+      return value + "people";
+    }
+    function update() {
+    let bill = Number(document.getElementById("yourBill").value)
+   let tipPercent = document.getElementById("tipPercent").value;
+   let split = document.getElementById("splitInput").value;
+   
+   let tipValue = bill * (tipPercent / 100);
+   let tipEach = tipValue / split;
+let newBillEach = (bill + tipValue) / split;
+
+  document.getElementById("tipPercent").innerHTML = tipPercent + "%";
+  document.getElementById("tipValue").innerHTML = formatMoney(tipValue);
+  document.getElementById("totalWithTip").innerHTML = formatMoney(bill + tipValue);
+  document.getElementById("splitValue").innerHTML = formartSplit(split);
+  document.getElementById("BillEach").innerHTML = formatMoney(newBillEach);
+  document.getElementById("tipEach").innerHTML = formatMoney(tipEach);
+    }
+    let container = document.getElementById("container");
+    container.addEventListener("input", update);
+  </script>
   
    <!-- <button onclick="this.innerHTML = Date()">The time is?</button>  -->
    
